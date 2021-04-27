@@ -32,11 +32,7 @@ public class GroupOfStudents {
     }
     public boolean removeStudent(String studentName, Map<String, Integer> subjs){
         Student buffStud = new Student(studentName, subjs);
-        for (Student student : listOfStudents) {
-            if (student.equals(buffStud))
-                return this.listOfStudents.remove(student);
-        }
-        return false;
+        return this.listOfStudents.remove(buffStud);
     }
 
     public boolean addSubject(String subject) {

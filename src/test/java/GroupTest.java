@@ -56,6 +56,9 @@ class GroupTest {
         assertTrue(group1.removeStudent("Захаров Владимир Александрович", subjectsAndMarks1));
         assertFalse(group1.removeStudent("Менделеев Дмитрий Иванович", subjectsAndMarks2));
         assertFalse(group1.removeStudent("Захаров Владимир", subjectsAndMarks1));
+        assertFalse(group1.removeStudent("Захаров Владимир Александрович", subjectsAndMarks2));
+        group1.addStudent(new Student("Захаров Владимир Александрович", subjectsAndMarks2));
+        assertTrue(group1.removeStudent("Захаров Владимир Александрович", subjectsAndMarks2));
     }
 
     @Test
