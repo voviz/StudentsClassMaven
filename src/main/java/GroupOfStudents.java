@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class GroupOfStudents {
@@ -29,8 +30,13 @@ public class GroupOfStudents {
         }
         return null;
     }
-    public boolean removeStudent(String studentName){
-        return this.listOfStudents.remove(getStudent(studentName));
+    public boolean removeStudent(String studentName, Map<String, Integer> subjs){
+        Student buffStud = new Student(studentName, subjs);
+        for (Student student : listOfStudents) {
+            if (student.equals(buffStud))
+                return this.listOfStudents.remove(student);
+        }
+        return false;
     }
 
     public boolean addSubject(String subject) {

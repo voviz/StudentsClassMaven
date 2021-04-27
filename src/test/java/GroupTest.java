@@ -53,9 +53,9 @@ class GroupTest {
 
     @Test
     void removeStudent() {
-        assertTrue(group1.removeStudent("Захаров Владимир Александрович"));
-        assertFalse(group1.removeStudent("Менделеев Дмитрий Иванович"));
-        assertFalse(group1.removeStudent("Захаров Владимир"));
+        assertTrue(group1.removeStudent("Захаров Владимир Александрович", subjectsAndMarks1));
+        assertFalse(group1.removeStudent("Менделеев Дмитрий Иванович", subjectsAndMarks2));
+        assertFalse(group1.removeStudent("Захаров Владимир", subjectsAndMarks1));
     }
 
     @Test
@@ -114,7 +114,7 @@ class GroupTest {
                 new Student("Ибраева Виолета Альбертовна", subjectsAndMarks3)
         );
         assertEquals(group1, group2);
-        group2.removeStudent("Терентьев Михаил Павлович");
+        group2.removeStudent("Терентьев Михаил Павлович", subjectsAndMarks2);
         assertNotEquals(group1, group2);
         Student student1 = new Student("Павлик", subjectsAndMarks1);
         Student student2 = new Student("Павлик", subjectsAndMarks2);
